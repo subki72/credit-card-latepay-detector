@@ -33,7 +33,7 @@ Evaluasi dilakukan menggunakan **Logistic Regression**, **Random Forest**, dan *
 
 | Metric | Old Model (Initial) | **New Model (Final)** |
 | :--- | :--- | :--- |
-| **Recall (Validasi)** | < 40% | **81.65%** 🚀 |
+| **Recall (Validasi)** | < 40% | **81.65%** |
 | **Accuracy** | ~90% (Bias) | 43% (Risk-Averse) |
 | **Handling** | None | SMOTE + Threshold 0.3 |
 
@@ -42,7 +42,7 @@ Meskipun Akurasi turun menjadi 43%, ini adalah *trade-off* yang disengaja. Dalam
 
 ---
 
-## 📂 File Structure
+## File Structure
 
 | File | Description |
 | :--- | :--- |
@@ -53,7 +53,7 @@ Meskipun Akurasi turun menjadi 43%, ini adalah *trade-off* yang disengaja. Dalam
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 1.  **Clone Repository:**
     ```bash
