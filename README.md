@@ -64,7 +64,7 @@ Meskipun Akurasi turun menjadi 43%, ini adalah *trade-off* yang disengaja. Dalam
 2.  **Install Library:**
     Pastikan library berikut terinstall (terutama `imbalanced-learn`):
     ```bash
-    pip install pandas numpy matplotlib seaborn scikit-learn xgboost jcopml imbalanced-learn
+    pip install -r requirements.txt
     ```
 
 3.  **Run Notebook:**
