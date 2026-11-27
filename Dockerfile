@@ -27,7 +27,7 @@ WORKDIR /app
 COPY --from=builder /opt/venv /opt/venv
 COPY --chown=appuser:appgroup src/ ./src/
 COPY --chown=appuser:appgroup main.py ./
-COPY --chown=appuser:appgroup "FinanKu Data All.csv" "FinanKu Data Validasi.csv" ./
+COPY --chown=appuser:appgroup ["FinanKu Data All.csv", "FinanKu Data Validasi.csv", "./"]
 
 USER appuser
 
