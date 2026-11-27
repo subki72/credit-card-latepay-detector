@@ -16,7 +16,8 @@ FROM python:3.11-slim AS runtime
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
-    PATH="/opt/venv/bin:$PATH"
+    PATH="/opt/venv/bin:$PATH" \
+    PYTHONPATH="/app"
 
 RUN groupadd --gid 10001 appgroup \
     && useradd --uid 10001 --gid appgroup --shell /sbin/nologin --create-home appuser

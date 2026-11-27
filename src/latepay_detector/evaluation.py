@@ -131,19 +131,23 @@ def compute_feature_importance(
         random_state=random_state,
         n_jobs=1,
     )
-    records = [
+    ranked = sorted(
+        zip(
+            features.columns,
+            result.importances_mean,
+            result.importances_std,
+            strict=True,
+        ),
+        key=lambda row: float(row[1]),
+        reverse=True,
+    )
+    records: list[dict[str, float | str]] = [
         {
             "feature": str(col),
             "importance_mean": round(float(mean), 6),
             "importance_std": round(float(std), 6),
         }
-        for col, mean, std in zip(
-            features.columns,
-            result.importances_mean,
-            result.importances_std,
-            strict=True,
-        )
+        for col, mean, std in ranked[:top_k]
     ]
-    records.sort(key=lambda item: float(item["importance_mean"]), reverse=True)
-    logger.debug("Computed permutation importance across %d features.", len(records))
-    return records[:top_k]
+    logger.debug("Computed permutation importance across %d features.", len(ranked))
+    return records

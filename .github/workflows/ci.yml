@@ -37,7 +37,7 @@ jobs:
         run: python -m flake8 --max-line-length=120 src tests main.py
 
       - name: Run Mypy Typecheck
-        run: python -m mypy src main.py
+        run: python -m mypy --explicit-package-bases src main.py
 
   test:
     name: Automated Test Suite (Pytest)

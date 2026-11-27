@@ -32,3 +32,5 @@ omit = ["tests/*", "*.ipynb"]
 python_version = "3.11"
 ignore_missing_imports = true
 check_untyped_defs = true
+explicit_package_bases = true
+namespace_packages = true

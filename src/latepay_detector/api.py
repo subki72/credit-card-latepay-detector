@@ -80,10 +80,14 @@ class PredictResponse(BaseModel):
     predictions: list[PredictionItem]
 
 
+def _default_horizons() -> list[HorizonType]:
+    return ["12m", "6m"]
+
+
 class AnalyzeRequest(BaseModel):
     """Experiment comparison trigger payload."""
 
-    horizons: list[HorizonType] = Field(default_factory=lambda: ["12m", "6m"], min_length=1)
+    horizons: list[HorizonType] = Field(default_factory=_default_horizons, min_length=1)
     model_type: ModelType = Field(default="logreg")
     threshold: float = Field(default=0.30, gt=0.0, lt=1.0)
     use_synthetic: bool = Field(default=False)
